@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.beetlestance.sample.ui.mainfragment.MainFragmentViewModel" />
+
+        <variable
+            name="eventListener"
+            type="com.beetlestance.sample.ui.mainfragment.EventListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_main_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mid_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+            app:layout_constraintEnd_toEndOf="@id/mid_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/wifi_toggle"
+            app:neumorph_shadowColorDark="@color/shadowDark"
+            app:neumorph_shadowColorLight="@color/shadowLight"
+            app:neumorph_shadowElevation="12dp"
+            app:neumorph_shapeType="pressed">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/wifi_state"
+                textScrolling="@{true}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:textAppearance="?textAppearanceBody1" />
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphFloatingActionButton
+            android:id="@+id/wifi_toggle"
+            style="@style/Widget.Neumorph.FloatingActionButton"
+            shapeType="@{viewModel.wifiToggleShape}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{() -> eventListener.toggleWifi()}"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_wifi_signal"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/start_guideline"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintStart_toStartOf="@id/mid_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_guideline"
+            app:neumorph_shadowColorDark="@color/shadowDark"
+            app:neumorph_shadowColorLight="@color/shadowLight"
+            app:neumorph_shadowElevation="8dp"
+            app:tint="@color/white" />
+
+        <soup.neumorphism.NeumorphFloatingActionButton
+            android:id="@+id/bluetooth_toggle"
+            style="@style/Widget.Neumorph.FloatingActionButton"
+            shapeType="@{viewModel.bluetoothToggleShape}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{() -> eventListener.toggleBluetooth()}"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_bluetooth_signal"
+            android:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintStart_toStartOf="@id/mid_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_guideline"
+            app:neumorph_shadowColorDark="@color/shadowDark"
+            app:neumorph_shadowColorLight="@color/shadowLight"
+            app:neumorph_shadowElevation="8dp" />
+
+        <View
+            android:id="@+id/network_divider"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:background="@color/gallery"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/mid_guideline"
+            app:layout_constraintTop_toBottomOf="@id/bluetooth_toggle"
+            app:neumorph_shadowColorDark="@color/shadowDark"
+            app:neumorph_shadowColorLight="@color/shadowLight"
+            app:neumorph_shadowElevation="12dp"
+            app:neumorph_shapeType="pressed">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/bluetooth_state"
+                textScrolling="@{true}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:textAppearance="?textAppearanceBody1" />
+        </soup.neumorphism.NeumorphCardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

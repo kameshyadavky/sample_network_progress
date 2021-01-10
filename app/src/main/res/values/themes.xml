@@ -1,0 +1,67 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Top level Day theme to be used in AndroidManifest.xml-->
+    <style name="Theme.Sample" parent="Base.Theme.Sample" />
+    <!--Base custom theme which will be shared between both light and dark theme variants-->
+    <style name="Base.Theme.Sample" parent="Base.Theme.MaterialThemeBuilder">
+        <!--Material color attributes (light theme) -->
+        <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
+        <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
+        <!--selection controls.-->
+        <item name="colorPrimary">@color/background</item>
+        <item name="colorPrimaryVariant">@color/background</item>
+        <item name="colorSecondary">@color/color_accent</item>
+        <item name="colorSecondaryVariant">@color/background</item>
+        <!--colorBackground appears behind scrollable content and is used for the default window-->
+        <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+        <!--and menus. colorError is used to indicate an error state for components such as-->
+        <!--text fields.-->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/background</item>
+        <item name="colorError">@color/monza</item>
+        <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+        <!--on which they appear.-->
+        <item name="colorOnPrimary">@color/color_accent</item>
+        <item name="colorOnSecondary">@color/color_accent</item>
+        <item name="colorOnBackground">@color/color_accent</item>
+        <item name="colorOnSurface">@color/color_accent</item>
+        <item name="colorOnError">@color/color_accent</item>
+        <!--Material type attributes-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Sample.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Sample.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Sample.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Sample.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Sample.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Sample.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Sample.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Sample.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Sample.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Sample.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Sample.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Sample.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Sample.Overline</item>
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Sample.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Sample.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Sample.LargeComponent
+        </item>
+        <!--Component styles-->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert
+        </item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+        <item name="android:textViewStyle">@style/Sample.MaterialTextView</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">
+            ?android:attr/colorBackground
+        </item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?attr/colorControlHighlight
+        </item>
+    </style>
+</resources>
